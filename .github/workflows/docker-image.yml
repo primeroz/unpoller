@@ -40,4 +40,4 @@ jobs:
 
       - name: Build the Docker image - tag
         # if: ${{ github.ref == 'ref/head/v*' }}
-        run: docker buildx build . --file Dockerfile --platform linux/arm64,linux/arm/v8,linux/amd64 --tag primeroz/unpoller:${github.ref_name} --push
+        run: docker buildx build . --file Dockerfile --platform linux/arm64,linux/arm/v8,linux/amd64 --tag primeroz/unpoller:${{github.ref_name}} --push
