@@ -32,4 +32,4 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}  
          
       - name: Build the Docker image
-        run: docker buildx build . --file Dockerfile --tag primeroz/unpoller:$(date +%s)
+        run: docker buildx build . --file Dockerfile --platforms=linux/arm64,linux/arm/v8,linux/amd64 --tag primeroz/unpoller:$(date +%s)
