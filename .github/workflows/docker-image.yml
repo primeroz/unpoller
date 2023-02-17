@@ -37,7 +37,8 @@ jobs:
 
       - name: Build the Docker image - latest
         if: github.ref_name == 'v*' || github.ref_name == 'main'
-        run: docker buildx build . --file Dockerfile --platform linux/arm64,linux/arm/v8,linux/amd64 --tag primeroz/unpoller:latest --push
+        run: echo ${{github.ref_name}}
+        #run: docker buildx build . --file Dockerfile --platform linux/arm64,linux/arm/v8,linux/amd64 --tag primeroz/unpoller:latest --push
 
       - name: Build the Docker image - tag
         if: github.ref_name == 'v*'
